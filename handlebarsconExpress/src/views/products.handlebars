@@ -1,0 +1,16 @@
+{{#if hasProducts}}
+
+<div>
+   <form action='/products' method='POST'>
+    <label>Nombre</label>
+    <input type="text"  name="nombre">
+    <label>Precio</label>
+    <input type="text"  name="precio">
+    <input type="submit">
+   </form>
+   
+</div>
+
+{{else}}
+<h1>No hay users</h1>
+{{/if}}

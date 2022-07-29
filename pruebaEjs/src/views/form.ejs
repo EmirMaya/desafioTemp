@@ -1,0 +1,26 @@
+<form id="testForm">
+    <label>Nombre</label>
+    <input name="nameProduct">
+    <label>Precio</label>
+    //uso cadena porque no hace nada mas por ahora
+    <input name="price">
+    <input type="submit">
+</form>
+<%- include('./partials/history', {productos}) %> 
+
+<script>
+    let form  = document.getElementById('testForm');
+    form.addEventListener('submit',evt=>{
+        evt.preventDefault();
+        let data = new FormData(form)
+        let obj = {};
+        data.forEach((value,key)=>obj[key]=value);
+        fetch('/productos',{
+            method:'POST',
+            body:JSON.stringify(obj),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+    })
+</script>

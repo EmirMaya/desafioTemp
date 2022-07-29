@@ -1,0 +1,9 @@
+<% typeof productos != 'undefined' ? productos : [] %> 
+<% if (productos.length>0) { %>
+    <% productos.forEach(prod => { %>
+        <p><%= prod.first_name %> </p>
+        <p><%= prod.last_name %> </p>
+    <% }) %>
+<% } else { %>
+    <p>No hay datos para mostrar</p>
+<% } %>
