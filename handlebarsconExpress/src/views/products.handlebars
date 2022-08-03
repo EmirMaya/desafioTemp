@@ -2,14 +2,21 @@
 
 <div>
    <form action='/products' method='POST'>
-    <label>Nombre</label>
-    <input type="text"  name="nombre">
-    <label>Precio</label>
-    <input type="text"  name="precio">
-    <input type="submit">
+      <label>Nombre</label>
+      <input type="text" name="nombre">
+      <label>Precio</label>
+      <input type="text" name="precio">
+      <input type="submit">
    </form>
-   
+
 </div>
+
+{{#each products}}
+ <ul>
+   <li>{{this.nombre}}</li>
+    <li>$ {{this.precio}}</li>
+ </ul>
+{{/each}}
 
 {{else}}
 <h1>No hay users</h1>
